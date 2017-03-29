@@ -34,6 +34,9 @@ RUN pip install --no-cache-dir -r requirements-plugins.txt
 
 ADD . /code/
 
+RUN chgrp -R 0 /code
+RUN chmod -R g+rw /code
+
 USER 1001
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
